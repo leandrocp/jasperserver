@@ -10,6 +10,6 @@ docker-compose run
 
 ---------------------
 
-[Server Admin](http://localhost:8080/jasperserver)
+[Server Admin](http://dockerhost:8080/jasperserver)
 * User: jasperadmin
 * Pass: jasperadmin
