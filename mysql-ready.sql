@@ -1,0 +1,1 @@
+SELECT 'mysql-ready'
