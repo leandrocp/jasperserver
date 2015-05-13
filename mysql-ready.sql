@@ -1,1 +1,0 @@
-SELECT 'mysql-ready'
