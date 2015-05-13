@@ -8,7 +8,7 @@ DB_PASSWORD=${DB_PASSWORD:-mysql}
 
 function wait_mysql() {
   host="database"
-  port=$(env | grep DATABASE_PORT_3306_TCP_PORT | cut -d = -f 2)
+  port=$(env | grep DATABASE_PORT | grep TCP_PORT | cut -d = -f 2)
 
   echo -n "-----> waiting for MySQL on $host:$port ..."
   while ! nc -w 1 $host $port 2>/dev/null
