@@ -1,11 +1,11 @@
 # jasperserver
-Docker do JasperServer
+Docker with JasperServer, using mysql and tomcat 7.
 
 ## Run
 ```
 docker-compose build --no-cache
 
-docker-compose run
+docker-compose up
 ```
 
 ---------------------

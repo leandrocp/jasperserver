@@ -2,7 +2,7 @@ mysqldata:
   image: mysql:latest
   volumes:
     - /var/lib/mysql
-  command: true
+  command: "true"
 
 mysql:
   image: mysql:latest
@@ -17,13 +17,13 @@ tomcatdata:
   image: tomcat:7
   volumes:
     - /usr/local/tomcat
-  command: true
+  command: "true"
 
 jasperdata:
   image: tomcat:7
   volumes:
     - /jasperconfig
-  command: true
+  command: "true"
 
 jasperserver:
   build: .
