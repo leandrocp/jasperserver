@@ -1,5 +1,4 @@
-#!/bin/bash
-set -e
+#!/bin/bash -e
 
 DB_TYPE=${DB_TYPE:-mysql}
 DB_USER=${DB_USER:-root}
