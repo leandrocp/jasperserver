@@ -1,0 +1,40 @@
+postgres-data:
+  image: postgres:9.4
+  volumes:
+    - ./volumes/postgresql/:/var/lib/postgresql/data
+  environment:
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_USER: postgres
+  command: "true"
+
+postgres:
+  image: postgres:9.4
+  volumes_from:
+    - postgres-data
+  ports:
+    - "5434:5432"
+  environment:
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_USER: postgres
+
+tomcatdata:
+  image: tomcat:7
+  volumes:
+    - /usr/local/tomcat
+  command: "true"
+
+jasperdata:
+  image: tomcat:7
+  volumes:
+    - ./volumes/jasperconfig/:/jasperconfig
+  command: "true"
+
+jasperserver:
+  build: .
+  volumes_from:
+    - tomcatdata
+    - jasperdata
+  ports:
+    - "8080:8080"
+  links:
+    - postgres:database

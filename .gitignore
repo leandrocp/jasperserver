@@ -1,2 +1,2 @@
-tags
-*.zip
+volumes/*
+.DS_Store

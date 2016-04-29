@@ -5,6 +5,8 @@ Jasperserver running on Docker, using mysql database and tomcat7 as webserver.
 
 ## How to build and run
 
+- Select desired database *mysql* or *postgreSQL*
+
 ```
 docker-compose build --no-cache
 
