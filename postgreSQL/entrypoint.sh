@@ -29,15 +29,16 @@ if [ "$1" = 'jasperserver' ]; then
 
     pushd ${JASPERSERVER_BUILD}
 
-    if [ ! -f "/jasperconfig/db_created"]; then
+    if [ ! -f "/var/lib/postgresql/db_created.sh" ]; then
 
       connect_postgres
       ./js-ant create-js-db init-js-db-ce import-minimal-ce deploy-webapp-ce
 
       echo 'PostgrSQL database created'
-      touch /jasperconfig/db_created
+      touch /var/lib/postgresql/db_created.sh
+    else
+      echo 'PostgrSQL database already exists'
     fi
-
     popd
   fi
 
